@@ -16,16 +16,16 @@ public class Main {
 		 }
 	}
 	
-	public static int[] vvod() { // ввод данных 
+	public static int[] vvod() {
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		int[] myArray = new int[10];// создаем массив для ввода
+		int[] myArray = new int[10];
 		for (int i = 0; i < 10; i++)
 		{myArray[i] = sc.nextInt();}
 		return myArray;}
 	
 	
-	public static void sort(int[] myArray){ //сортировка
+	public static void sort(int[] myArray){
 		Arrays.sort(myArray);
 	}
 	
