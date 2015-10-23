@@ -4,6 +4,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.LineNumberReader;
 import java.util.ArrayList;
@@ -65,7 +66,21 @@ import javax.swing.JTextField;
 					e.printStackTrace();}
 			} catch (FileNotFoundException e) {
 				e.printStackTrace();}
+			
 			System.out.println(list.toString());
+			
+			try{
+                FileWriter writer = new FileWriter("Lib.txt");//sozdanie novogo faila i zapis v nego
+                
+                for(String line1 : list)
+                {
+                writer.write(line1);
+                writer.write(System.getProperty("line.separator"));
+                
+                }
+                
+                writer.close();
+                }catch (IOException ex){ex.printStackTrace();}
 	 }
  }
 	 
