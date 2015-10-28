@@ -14,6 +14,7 @@ public class Main {
 		if(n<100){
 			if(n>=1){
 				if (n%2==1){
+					
 					List<Integer> list = new ArrayList<>(n);
 					
 					for(int i=0; i<n;i++){
@@ -21,12 +22,14 @@ public class Main {
 						
 						list.add(y);			
 					}
+					
 					int v =list.size();
-					for(int i=0; i<v;i++){int count = Collections.frequency(list, i);
-						if(count<2){System.out.println("Результат "+i);
+					for(int i=0; i<v;i++){
+						
+						int count = Collections.frequency(list, list.get(i));
+						if(count<2){System.out.println("Результат "+"\n"+list.get(i));
 						break;
-						}else{
-						i++;}
+						}
 					}
 						
 				}else{System.out.println("Введено недопустимое занчение!");}
