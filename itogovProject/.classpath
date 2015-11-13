@@ -7,12 +7,5 @@
 	<classpathentry kind="lib" path="C:/Users/KostyaSn/Downloads/gson-2.2.4-javadoc.jar"/>
 	<classpathentry kind="lib" path="C:/Users/KostyaSn/Downloads/gson-2.2.4-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/KostyaSn/Downloads/gson-2.3.1-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/kostyasnetko/Downloads/gson-2.4-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Users/kostyasnetko/Downloads/gson-2.4-sources.jar"/>
-	<classpathentry kind="lib" path="/Users/kostyasnetko/Downloads/gson-2.4.jar"/>
-	<classpathentry kind="lib" path="/Volumes/BOOTCAMP/Users/KostyaSn/Downloads/gson-2.2.4-javadoc.jar"/>
-	<classpathentry kind="lib" path="/Volumes/BOOTCAMP/Users/KostyaSn/Downloads/gson-2.2.4-sources.jar"/>
-	<classpathentry kind="lib" path="/Volumes/BOOTCAMP/Users/KostyaSn/Downloads/gson-2.2.4.jar"/>
-	<classpathentry kind="lib" path="/Volumes/BOOTCAMP/Users/KostyaSn/Downloads/gson-2.3.1-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

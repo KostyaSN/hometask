@@ -1,4 +1,4 @@
-package Parsers;
+package parsers;
 import java.util.ArrayList;
 import java.util.List;
 import javax.xml.parsers.DocumentBuilder;
@@ -7,9 +7,9 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-import Models.Currency;
+import get_set_ForPars.Currency;
 
-public class ParserXML extends Thread{
+public class parserXML extends Thread{
 
 	@Override
 	public void run() {
@@ -35,25 +35,25 @@ public class ParserXML extends Thread{
 			NodeList bankNameNodeList = root.getElementsByTagName("bankName");
 				Node nameNode = bankNameNodeList.item(0);
 				String fileName = nameNode.getFirstChild().getNodeValue();
-				System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ " + fileName );
+				System.out.println("Название банка " + fileName );
 				
 				
 				NodeList bankLocationNodeList = root.getElementsByTagName("bankLocation");
 				Node nameNode1 = bankLocationNodeList.item(0);
 				String fileName1 = nameNode1.getFirstChild().getNodeValue();
-				System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: "+fileName1);
+				System.out.println("Расположение банка: "+fileName1);
 				
 				
 				NodeList dateNodeList = root.getElementsByTagName("date");
 				Node nameNode2 = dateNodeList.item(0);
 				String fileName2 = nameNode2.getFirstChild().getNodeValue();
-				System.out.println("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ "+fileName2);
+				System.out.println("Дата полученных данных "+fileName2);
 				
 				
 				NodeList baseCurrencyIdNodeList = root.getElementsByTagName("baseCurrencyId");
 				Node nameNode3 = baseCurrencyIdNodeList.item(0);
 				String fileName3 = nameNode3.getFirstChild().getNodeValue();
-				System.out.println("ID пїЅпїЅпїЅпїЅпїЅ :"+fileName3);
+				System.out.println("ID банка :"+fileName3);
 				
 
 				NodeList currencyList = root.getElementsByTagName("currency");
@@ -79,7 +79,7 @@ public class ParserXML extends Thread{
 						.getElementsByTagName("name")
 						.item(0)
 						.getTextContent();
-			System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅ "+ name);
+			System.out.println("Валюта "+ name);
 			element.setName(name);	
 				
 			String id =
@@ -87,7 +87,7 @@ public class ParserXML extends Thread{
 					.getElementsByTagName("id")
 					.item(0)
 					.getTextContent();
-			System.out.println("id пїЅпїЅпїЅпїЅпїЅпїЅ "+ id);
+			System.out.println("id валюты "+ id);
 			element.setId(Integer.valueOf(id));
 			
 			String code =
@@ -95,7 +95,7 @@ public class ParserXML extends Thread{
 					.getElementsByTagName("code")
 					.item(0)
 					.getTextContent();
-			System.out.println("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ "+ code);
+			System.out.println("код валюты "+ code);
 			element.setCode(Integer.valueOf(code));
 			
 			String rate = 
@@ -103,7 +103,7 @@ public class ParserXML extends Thread{
 					.getElementsByTagName("rate")
 					.item(0)
 					.getTextContent();
-			System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "+rate);
+			System.out.println("стоимость "+rate);
 			element.setRate(Double.valueOf(rate));
 			
 			
@@ -112,7 +112,7 @@ public class ParserXML extends Thread{
 					.getElementsByTagName("visible")
 					.item(0)
 					.getTextContent();
-			System.out.println("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "+ visible);
+			System.out.println("отображение "+ visible);
 			element.setVisible(Boolean.valueOf(visible));
 				
 			list.addAll(list);

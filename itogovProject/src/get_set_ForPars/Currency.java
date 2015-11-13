@@ -1,4 +1,4 @@
-package Models;
+package get_set_ForPars;
 
 public class Currency {
 
@@ -11,10 +11,10 @@ public class Currency {
 	public String toString() {
 		return "\n"+"------------------------------------------"+"\n"
 				+ name +
-				" Id пїЅпїЅпїЅпїЅпїЅпїЅ =" + id + 
-				" пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ - " + code + 
-				" пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + rate + 
-				" пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ = " + visible
+				" Id валюты =" + id + 
+				" код валюты - " + code + 
+				" стоимость = " + rate + 
+				" отображение = " + visible
 				;
 	}
 	public int getId() {

@@ -1,4 +1,4 @@
-package Models;
+package get_set_ForPars;
 
 import java.util.Date;
 import java.util.List;
@@ -12,8 +12,8 @@ public class Root {
 	private List<Currency> currency;
 	@Override
 	public String toString() {
-		return "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: " + bankName + "\n"+ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: " + bankLocation + "\n"+ "пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ: " + date + "\n"+ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ: "
-				+ baseCurrencyId + "\n"+ "пїЅпїЅпїЅпїЅпїЅпїЅ: " + currency ;
+		return "Название банка: " + bankName + "\n"+ "Расположение банка: " + bankLocation + "\n"+ "Дата данных: " + date + "\n"+ "Индификациооный номер банка: "
+				+ baseCurrencyId + "\n"+ "Валюты: " + currency ;
 	}
 	public String getBankName() {
 		return bankName;

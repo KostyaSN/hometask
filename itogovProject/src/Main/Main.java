@@ -6,67 +6,67 @@ import java.util.Scanner;
 
 public class Main {
 	
-	static Download.loadJSON loadJSON;
-	static Download.loadXML loadXML;
-	static Parsers.ParserJson parserJson;
-	static Parsers.ParserXML parserXML;
+	static download.loadJSON loadJSON;
+	static download.loadXML loadXML;
+	static parsers.parserJson parserJson;
+	static parsers.parserXML parserXML;
 	
 	private static Scanner sc = new Scanner(System.in);
 	
 
 	public static void main(String[] args) throws Exception{
 		
-		System.out.println("Р”РѕР±СЂРѕ РїРѕР¶Р°Р»РѕРІР°С‚СЊ РІ РїСЂРѕРіСЂР°РјСѓ РѕР±Р·РѕСЂР° РєСѓСЂСЃР° РІР°Р»СЋС‚!");
+		System.out.println("Добро пожаловать в програму обзора курса валют!");
 		SelectPars();
 		SelectWhatDo();
 		
 	}
 	
-		public static void SelectPars() throws Exception{//Р’С‹Р±РёСЂР°РµРј С„Р°Р№Р» РґР»СЏ Р·Р°РіСЂСѓР·РєРё Рё РїР°СЂСЃР°
+		public static void SelectPars() throws Exception{//выбор парсера
 			
-			loadJSON = new Download.loadJSON();
-			loadXML = new Download.loadXML();
-			parserJson = new Parsers.ParserJson();
-			parserXML = new  Parsers.ParserXML();
+			loadJSON = new download.loadJSON();
+			loadXML = new download.loadXML();
+			parserJson = new parsers.parserJson();
+			parserXML = new  parsers.parserXML();
 			
 			Thread myLoadJ = new Thread(loadJSON);
 			Thread myLoadX = new Thread(loadXML);
 			Thread myParJS = new Thread(parserJson);
 			Thread myParXML = new Thread(parserXML);
 			
-		System.out.println("Р’С‹Р±РµСЂРµС‚Рµ РґР°РЅРЅС‹Рµ РєР°РєРѕРіРѕ С‚РёРїР° С‚СЂРµР±СѓРµС‚СЃСЏ РїРѕР»СѓС‡РёС‚СЊ Рё РѕР±СЂР°Р±РѕС‚Р°С‚СЊ:"+
-		"\n Р’РІРµРґРёС‚Рµ 1 РґР»СЏ РІС‹Р±РѕСЂР° JSON"+
-		"\n Р’РІРµРґРёС‚Рµ 2 РґР»СЏ РІС‹Р±РѕСЂР° XML"+
-		"\n Р’РІРµРґРёС‚Рµ 3 РґР»СЏ Р·Р°РІРµСЂС€РµРЅРёСЏ СЂР°Р±РѕС‚С‹ РїСЂРѕРіСЂР°РјРјС‹");
+		System.out.println("Выберете данные какого типа требуется получить и обработать:"+
+		"\n Введите 1 для выбора JSON"+
+		"\n Введите 2 для выбора XML"+
+		"\n Введите 3 для завершения работы программы");
 
 			String input = sc.next();
 			
-			if(input.equals("1")){System.out.println(" пїЅпїЅпїЅпїЅпїЅпїЅ JSON");
+			if(input.equals("1")){System.out.println(" Выбран JSON");
 			myLoadJ.start();
 			myLoadJ.join();
 			myParJS.start();
 			myParJS.join();
 			}
-			else if(input.equals("2")){System.out.println(" пїЅпїЅпїЅпїЅпїЅпїЅ XML");
+			else if(input.equals("2")){System.out.println(" Выбран XML");
 			myLoadX.start();
 			myLoadX.join();
 			myParXML.start();
 			myParXML.join();
 			}
-			else if(input.equals("3")){System.out.println(" пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"); System.exit(0);}
+			else if(input.equals("3")){System.out.println(" Выбрано Завершение програмы"); System.exit(0);}
 			else {System.out.println(
-					"пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ(!), пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ \n");
+					"Введено недопустимое значение(!), попробуйте выбрать снова \n");
 			 SelectPars();
 			
 		}	
 	}
 		
-		public static void SelectWhatDo(){//пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+		public static void SelectWhatDo(){//выбор действий с полученными данными
 			
-			System.out.println("\nР’РІРµРґРёС‚Рµ РєР°РєСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ С…РѕС‚РёС‚Рµ РїРѕР»СѓС‡РёС‚СЊ:  \n"
-					+ "Р’РІРµРґРёС‚Рµ 1 РґР»СЏ РІС‹РІРѕРґР° РїРѕР»СѓС‡РµРЅРЅС‹С… РґР°РЅРЅС‹С… РІ РєРѕРЅСЃРѕР»СЊ \n"
-					+ "Р’РІРµРґРёС‚Рµ 2 РґР»СЏ РІС‹РІРѕРґР° РѕРїСЂРµРґРµР»РµРЅРЅРѕР№ РІР°Р»СЋС‚С‹\n"
-					+ "Р’РІРµРґРёС‚Рµ 3 РґР»СЏ РєРѕРЅРІРµСЂС‚Р°С†РёРё РІР°Р»СЋС‚С‹");
+			System.out.println("\nВведите какую информацию хотите получить: \n"
+					+ "Введите 1 для вывода полученных данных в консоль \n"
+					+ "Введите 2 для вывода определенной валюты\n"
+					+ "Введите 3 для конвертации валюты");
 			String input = sc.next();
 			
 					
